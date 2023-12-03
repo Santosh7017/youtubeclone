@@ -35,6 +35,10 @@ const YoutubeSlice = createSlice ({
             state.videos = action.payload.parseData; 
             state.nextPageToken = action.payload.nextPageToken;
         });
+        builder.addCase(getSearchPageVideos.fulfilled,(state, action) => {
+            state.videos = action.payload.parseData;
+            state.nextPageToken = action.payload.nextPageToken;
+        })
         builder.addCase(getVideoDetails.fulfilled,(state, action) => {
             state.currentPlaying = action.payload; 
       
